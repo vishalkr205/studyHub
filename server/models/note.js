@@ -1,0 +1,37 @@
+const mongoose = require("mongoose");
+const noteSchema = new mongoose.Schema(
+    {
+        title:{
+            type:String,
+            required:true,
+            trim:true,
+        },
+        subject:{
+            type:mongoose.Schema.Types.ObjectId,
+            ref:"Subject",
+            required:true,
+        },
+        chapter:{
+            type:mongoose.Schema.Types.ObjectId,
+            ref:"chapter",
+            required:true,
+        },
+        description:{
+            type:String,
+            default:"",
+        },
+        pdfUrl:{
+            type:String,
+            required:true,
+        },
+        uploadedBy:{
+            type:mongoose.Schema.type.ObjectId,
+            ref:"User",
+            required:true,
+        },
+    },
+    {
+        timestamps:true,
+    }
+);
+module.exports=mongoose.model("Notes",noteSchema);
