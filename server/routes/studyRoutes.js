@@ -8,6 +8,6 @@ const{
 } = require("../controllers/studyController");
 
 router.get("/subjects",getSubjects);
-router.get("subjects/:id/chapters",getChapters);
+router.get("/subjects/:id/chapters",getChapters);
 router.get("/chapters/:id/notes",getNotes);
 module.exports=router;

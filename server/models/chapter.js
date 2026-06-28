@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const chapterSchema = new mongoose.Schema(
     {
         subject:{
-            type:mongoose.Schema.type.ObjectId,
+            type:mongoose.Schema.Types.ObjectId,
             ref:"subject",
             required:true,
         },
