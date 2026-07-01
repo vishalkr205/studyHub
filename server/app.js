@@ -4,12 +4,15 @@ const authRoutes = require("./routes/authRoutes");
 const app = express ();
 const studyRoutes = require("./routes/studyRoutes");
 const practiceRoutes = require("./routes/practiceRoutes");
-app.use("/api",practiceRoutes);
-app.use("/api",studyRoutes);
+
+// Middleware must be registered BEFORE routes
 app.use(cors());
 app.use(express.json());
+
+app.use("/api",practiceRoutes);
+app.use("/api",studyRoutes);
 app.use("/api/auth",authRoutes);
-app.get("/",(req,res)=> {res.send("KRSTUDY API is running");
+app.get("/",(req,res)=>{res.send("KRSTUDY API is running");
 });
 
 module.exports = app;
