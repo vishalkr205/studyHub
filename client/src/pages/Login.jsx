@@ -29,6 +29,9 @@ function Login(){
             <input type="password" placeholder="Password" value={password} onChange={(e) =>setPassword(e.target.value)} />
             <br /><br />
             <button onClick={handleLogin}>Login</button>
+            <Link to ="./Register.jsx">
+                <button>Register</button>
+            </Link>
         </div>
     );
 }
