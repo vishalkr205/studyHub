@@ -17,7 +17,7 @@ function Login(){
             setUser(response.data.user);
 
             alert("Login successful!");
-            navigate("dashboard");
+            navigate("/dashboard");
         }catch(error){
             alert(error.response?.data?.message || "login Failed");
         }
@@ -30,7 +30,7 @@ function Login(){
             <input type="password" placeholder="Password" value={password} onChange={(e) =>setPassword(e.target.value)} />
             <br /><br />
             <button onClick={handleLogin}>Login</button>
-            <Link to ="./Register.jsx">
+            <Link to ="/register.jsx">
                 <button>Register</button>
             </Link>
         </div>
